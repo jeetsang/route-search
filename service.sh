@@ -23,7 +23,7 @@ dev_smoke() {
 }
 
 _run_smoke() {
-  baseUrl="http://localhost:8088"
+  baseUrl="http://localhost:8080"
   echo "Running smoke tests on $baseUrl..." && \
     (curl -fsS "$baseUrl/api/direct?dep_sid=3&arr_sid=4" | grep -E 'true|false') && \
     (curl -fsS "$baseUrl/api/direct?dep_sid=0&arr_sid=1" | grep -E 'true|false')
@@ -34,7 +34,7 @@ docker_build() {
 }
 
 docker_run() {
-  docker run --rm -it -p 8088:8088 goeuro:devtest
+  docker run --rm -it -p 8080:8080 goeuro:devtest
 }
 
 docker_smoke() {
