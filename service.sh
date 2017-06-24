@@ -9,7 +9,7 @@ dev_build() {
 
 dev_run() {
   ./gradlew build
-  java -jar  -Dfile=$PWD/data/example build/libs/route-search-service-0.1.0.jar
+  java -jar  -Dfile=$1 build/libs/route-search-service-0.1.0.jar
 }
 
 dev_smoke() {
